@@ -14,4 +14,5 @@ El modelo de datos busca facilitar tareas administrativas y operativas, optimiza
 En un contexto donde la conciencia social sobre la adopción responsable y el bienestar animal está en constante crecimiento, disponer de un sistema organizado y accesible contribuye significativamente a mejorar los índices de adopción, evitar el abandono y promover una tenencia responsable.
 
 ![image](https://github.com/user-attachments/assets/804ce51e-c7a8-4cc0-82be-ec993584a393)
+
 (Aclaracion respecto a la iamgen, por cuestiones de prolijidad y de uso de la herramienta gratuita, no se agregaron los atributos de cada entidad. A continuacion se presentan las entidades con sus atributos)
