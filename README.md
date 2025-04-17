@@ -12,4 +12,6 @@ Además, la base de datos contempla la incorporación de funcionalidades complem
 El modelo de datos busca facilitar tareas administrativas y operativas, optimizando el trabajo del personal y voluntarios mediante consultas rápidas, reportes automatizados y vistas específicas según cada necesidad. También permitirá llevar un control detallado de las mascotas adoptadas y aquellas que aún están disponibles, favoreciendo la trazabilidad de cada caso.
 
 En un contexto donde la conciencia social sobre la adopción responsable y el bienestar animal está en constante crecimiento, disponer de un sistema organizado y accesible contribuye significativamente a mejorar los índices de adopción, evitar el abandono y promover una tenencia responsable.
+
 ![image](https://github.com/user-attachments/assets/804ce51e-c7a8-4cc0-82be-ec993584a393)
+(Aclaracion respecto a la iamgen, por cuestiones de prolijidad y de uso de la herramienta gratuita, no se agregaron los atributos de cada entidad. A continuacion se presentan las entidades con sus atributos)
