@@ -111,3 +111,53 @@ Registra contribuciones realizadas al refugio.
 - `donante_nombre` – Nombre del donante  
 - `id_refugio` (FK) – Refugio beneficiado  
 
+## Resumen de Entidades y Atributos
+
+| Entidad             | Atributo              | Tipo de Dato Sugerido   | Clave         |
+|---------------------|------------------------|--------------------------|---------------|
+| **Mascota**         | id_mascota             | INT AUTO_INCREMENT       | PK            |
+|                     | nombre                 | VARCHAR(50)              |               |
+|                     | especie                | VARCHAR(30)              |               |
+|                     | raza                   | VARCHAR(50)              |               |
+|                     | edad_aproximada        | INT                      |               |
+|                     | sexo                   | ENUM('Macho', 'Hembra')  |               |
+|                     | fecha_ingreso          | DATE                     |               |
+|                     | estado_adopcion        | ENUM('Disponible', 'Adoptado', 'En seguimiento') |    |
+|                     | id_refugio             | INT                      | FK → Refugio  |
+| **Refugio**         | id_refugio             | INT AUTO_INCREMENT       | PK            |
+|                     | nombre                 | VARCHAR(100)             |               |
+|                     | direccion              | VARCHAR(150)             |               |
+|                     | telefono               | VARCHAR(20)              |               |
+|                     | email                  | VARCHAR(100)             |               |
+| **Adoptante**       | id_adoptante           | INT AUTO_INCREMENT       | PK            |
+|                     | nombre                 | VARCHAR(100)             |               |
+|                     | dni                    | VARCHAR(15)              |               |
+|                     | telefono               | VARCHAR(20)              |               |
+|                     | email                  | VARCHAR(100)             |               |
+|                     | direccion              | VARCHAR(150)             |               |
+| **SolicitudAdopcion** | id_solicitud        | INT AUTO_INCREMENT       | PK            |
+|                     | fecha_solicitud        | DATE                     |               |
+|                     | estado                 | ENUM('Pendiente', 'Aprobada', 'Rechazada', 'Cancelada') |   |
+|                     | id_adoptante           | INT                      | FK → Adoptante|
+|                     | id_mascota             | INT                      | FK → Mascota  |
+| **Seguimiento**     | id_seguimiento         | INT AUTO_INCREMENT       | PK            |
+|                     | id_solicitud           | INT                      | FK → SolicitudAdopcion |
+|                     | fecha_visita           | DATE                     |               |
+|                     | observaciones          | TEXT                     |               |
+|                     | estado_mascota         | VARCHAR(50)              |               |
+| **Veterinario**     | id_veterinario         | INT AUTO_INCREMENT       | PK            |
+|                     | nombre                 | VARCHAR(100)             |               |
+|                     | matricula              | VARCHAR(30)              |               |
+|                     | telefono               | VARCHAR(20)              |               |
+|                     | email                  | VARCHAR(100)             |               |
+| **ConsultaVeterinaria** | id_consulta       | INT AUTO_INCREMENT       | PK            |
+|                     | id_mascota             | INT                      | FK → Mascota  |
+|                     | id_veterinario         | INT                      | FK → Veterinario |
+|                     | fecha_consulta         | DATE                     |               |
+|                     | motivo                 | TEXT                     |               |
+|                     | tratamiento            | TEXT                     |               |
+| **Donacion**        | id_donacion            | INT AUTO_INCREMENT       | PK            |
+|                     | fecha                  | DATE                     |               |
+|                     | monto                  | DECIMAL(10,2)            |               |
+|                     | donante_nombre         | VARCHAR(100)             |               |
+|                     | id_refugio             | INT                      | FK → Refugio  |
