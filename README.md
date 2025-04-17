@@ -16,3 +16,98 @@ En un contexto donde la conciencia social sobre la adopción responsable y el bi
 ![image](https://github.com/user-attachments/assets/804ce51e-c7a8-4cc0-82be-ec993584a393)
 
 (Aclaracion respecto a la iamgen, por cuestiones de prolijidad y de uso de la herramienta gratuita, no se agregaron los atributos de cada entidad. A continuacion se presentan las entidades con sus atributos)
+
+## Entidades y Atributos
+
+### 1. Mascota
+Información de cada animal alojado en el refugio.
+
+- `id_mascota` (PK) – Identificador único  
+- `nombre` – Nombre de la mascota  
+- `especie` – Perro, gato, etc.  
+- `raza` – Raza específica  
+- `edad_aproximada` – Edad estimada (años o meses)  
+- `sexo` – Macho / Hembra  
+- `fecha_ingreso` – Fecha en la que ingresó al refugio  
+- `estado_adopcion` – Disponible / Adoptado / En seguimiento  
+- `id_refugio` (FK) – Hace referencia al refugio que la aloja  
+
+---
+
+### 2. Refugio
+Organización o lugar donde se encuentra la mascota.
+
+- `id_refugio` (PK) – Identificador del refugio  
+- `nombre` – Nombre del refugio  
+- `direccion` – Dirección física  
+- `telefono` – Teléfono de contacto  
+- `email` – Correo electrónico de contacto  
+
+---
+
+### 3. Adoptante
+Persona interesada o que ha adoptado una mascota.
+
+- `id_adoptante` (PK) – Identificador del adoptante  
+- `nombre` – Nombre completo  
+- `dni` – Documento de identidad  
+- `telefono` – Teléfono de contacto  
+- `email` – Correo electrónico  
+- `direccion` – Dirección del adoptante  
+
+---
+
+### 4. SolicitudAdopcion
+Registra el pedido de adopción por parte del adoptante.
+
+- `id_solicitud` (PK) – Identificador de la solicitud  
+- `fecha_solicitud` – Fecha de presentación de la solicitud  
+- `estado` – Pendiente / Aprobada / Rechazada / Cancelada  
+- `id_adoptante` (FK) – Hace referencia al solicitante  
+- `id_mascota` (FK) – Hace referencia a la mascota solicitada  
+
+---
+
+### 5. Seguimiento
+Registra controles posteriores a la adopción.
+
+- `id_seguimiento` (PK) – Identificador del control  
+- `id_solicitud` (FK) – Hace referencia a la solicitud asociada  
+- `fecha_visita` – Fecha del control  
+- `observaciones` – Notas del responsable  
+- `estado_mascota` – Bien / Mal adaptada / Requiere revisión  
+
+---
+
+### 6. Veterinario
+Datos del profesional que atiende a las mascotas.
+
+- `id_veterinario` (PK) – Identificador  
+- `nombre` – Nombre completo  
+- `matricula` – Número de matrícula profesional  
+- `telefono` – Teléfono de contacto  
+- `email` – Email  
+
+---
+
+### 7. ConsultaVeterinaria
+Historial médico de cada mascota.
+
+- `id_consulta` (PK) – Identificador único  
+- `id_mascota` (FK) – Mascota atendida  
+- `id_veterinario` (FK) – Profesional responsable  
+- `fecha_consulta` – Fecha  
+- `motivo` – Motivo de la atención  
+- `tratamiento` – Descripción del tratamiento aplicado  
+
+---
+
+### 8. Donacion
+Registra contribuciones realizadas al refugio.
+
+- `id_donacion` (PK) – Identificador único  
+- `fecha` – Fecha de la donación  
+- `monto` – Monto donado  
+- `donante_nombre` – Nombre del donante  
+- `id_refugio` (FK) – Refugio beneficiado  
+
